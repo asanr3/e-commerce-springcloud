@@ -17,6 +17,7 @@
     </parent>
 
     <properties>
+        <!-- Spring Cloud 和 Spring Cloud alibaba的版本存在对应关系，需要正确选择-->
         <!-- Spring Cloud Hoxton.SR8 依赖 -->
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <!-- spring cloud alibaba 依赖 -->
@@ -36,6 +37,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- 安全检查、监控的依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
