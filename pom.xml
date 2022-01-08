@@ -8,6 +8,11 @@
     <artifactId>ecommerce-springcloud</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <modules>
+        <module>e-commerce-common</module>
+        <module>e-commerce-mvc-config</module>
+    </modules>
+
     <packaging>pom</packaging>
 
     <parent>
