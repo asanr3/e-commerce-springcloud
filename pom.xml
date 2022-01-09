@@ -11,6 +11,7 @@
     <modules>
         <module>e-commerce-common</module>
         <module>e-commerce-mvc-config</module>
+        <module>e-commerce-alibaba-nacos-client</module>
     </modules>
 
     <packaging>pom</packaging>
