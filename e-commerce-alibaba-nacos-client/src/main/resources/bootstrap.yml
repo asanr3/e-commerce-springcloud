@@ -14,6 +14,10 @@ spring:
         server-addr: 127.0.0.1:8848
         # server-addr: 127.0.0.1:8848,127.0.0.1:8849,127.0.0.1:8850 # Nacos 集群服务器地址
         namespace: 5db3a2b9-5774-4283-a4fe-246a145117d1
+        # 指定actuator端点的访问路径，因为我们上面配置了服务的前缀 context-path ，所以我们需要将它拼接上，不然路径不对会报错
+        metadata:
+          management:
+            context-path: ${server.servlet.context-path}/actuator
 
 # 暴露端点
 management:
