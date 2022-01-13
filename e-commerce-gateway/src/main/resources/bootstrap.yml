@@ -1,0 +1,89 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /asan
+
+spring:
+  application:
+    name: e-commerce-gateway
+  cloud:
+    nacos:
+      discovery:
+        enabled: true # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
+        server-addr: 127.0.0.1:8848 # Nacos 服务器地址
+        namespace: 5db3a2b9-5774-4283-a4fe-246a145117d1
+#        metadata:
+#          management:
+#            context-path: ${server.servlet.context-path}/actuator
+#    sentinel:
+#      eager: true
+#      transport:
+#        port: 8720
+#        dashboard: 127.0.0.1:7777
+#      datasource:
+        # 通过本地文件方式, 基于服务级别的配置
+#        dsl.file:
+#          file: classpath:gateway-flow-rule-sentinel.json
+#          # 代表服务级别的限流, 一步步点进去看, 文件类型
+#          ruleType: gw-flow
+#        # 通过本地文件方式, 细粒度对指定 api 进行配置
+#        ds2.file:
+#          file: classpath:gateway-flow-rule-api-sentinel.json
+#          # 代表 API 分组, 一步步点进去看, 文件类型
+#          ruleType: gw-api-group
+        # 集成 Nacos
+#        ds1:
+#          nacos:
+#            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#            namespace: ${spring.cloud.nacos.discovery.namespace}
+#            # 测试时, 看看 Nacos 中修改是否能让 dashboard 生效, 就把第二个 count 也修改为 3
+#            data-id: gateway-flow-rule-sentinel
+#            group-id: DEFAULT_GROUP
+#            data-type: json
+#            rule-type: gw-flow
+#        ds2:
+#          nacos:
+#            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#            namespace: ${spring.cloud.nacos.discovery.namespace}
+#            data-id: gateway-flow-rule-api-sentinel
+#            group-id: DEFAULT_GROUP
+#            data-type: json
+#            rule-type: gw-api-group
+
+    # 静态路由
+  #    gateway:
+  #      routes:
+  #        - id: path_route # 路由的ID
+  #          uri: 127.0.0.1:8080/user/{id} # 匹配后路由地址
+  #          predicates: # 断言, 路径相匹配的进行路由
+  #            - Path=/user/{id}
+#  kafka:
+#    bootstrap-servers: 127.0.0.1:9092
+#    producer:
+#      retries: 3
+#    consumer:
+#      auto-offset-reset: latest
+#  zipkin:
+#    sender:
+#      type: kafka # 默认是 web
+#    base-url: http://localhost:9411/
+  main:
+    allow-bean-definition-overriding: true  # 允许重名的bean存在，因为将来会引入很多依赖, 难免有重名的 bean
+
+# 这个地方独立配置, 是网关的数据, 代码 GatewayConfig.java 中读取被监听
+#nacos:
+#  gateway:
+#    route:
+#      config:
+#        data-id: e-commerce-gateway-router
+#        group: e-commerce
+
+# 暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
