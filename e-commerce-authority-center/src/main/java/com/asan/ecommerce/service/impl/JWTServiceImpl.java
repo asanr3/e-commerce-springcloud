@@ -1,5 +1,6 @@
 package com.asan.ecommerce.service.impl;
 
+import cn.hutool.crypto.digest.MD5;
 import com.alibaba.fastjson.JSON;
 import com.asan.ecommerce.constant.AuthorityConstant;
 import com.asan.ecommerce.constant.CommonConstant;
@@ -120,7 +121,13 @@ public class JWTServiceImpl implements IJWTService {
 
         EcommerceUser ecommerceUser = new EcommerceUser();
         ecommerceUser.setUsername(usernameAndPassword.getUsername());
-        ecommerceUser.setPassword(usernameAndPassword.getPassword());   // MD5 编码以后
+        String pwd = usernameAndPassword.getPassword();
+        // 保存到数据库的密码需要是MD5编码以后的密码，这里简单判断一下传入的密码是否是MD5的
+        if (usernameAndPassword.getPassword().length() < 32) {
+            // 将密码编码为MD5格式
+            pwd = MD5.create().digestHex(usernameAndPassword.getPassword());
+        }
+        ecommerceUser.setPassword(pwd);
         ecommerceUser.setExtraInfo("{}");
 
         // 注册一个新用户, 写一条记录到数据表中
