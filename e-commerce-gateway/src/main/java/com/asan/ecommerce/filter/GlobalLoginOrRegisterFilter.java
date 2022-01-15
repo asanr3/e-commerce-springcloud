@@ -32,7 +32,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * <h1>全局登录鉴权过滤器</h1>
+ * <h1>全局登录注册鉴权过滤器</h1>
  *
  * @author mingkai yun
  * @date 2022/1/14
@@ -42,7 +42,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class GlobalLoginOrRegisterFilter implements GlobalFilter, Ordered {
 
     /**
-     * 注册中心客户端, 可以从注册中心中获取服务实例信息
+     * 负载均衡客户端, 可以从注册中心中获取服务实例信息
      */
     private final LoadBalancerClient loadBalancerClient;
     private final RestTemplate restTemplate;
@@ -125,7 +125,7 @@ public class GlobalLoginOrRegisterFilter implements GlobalFilter, Ordered {
      */
     private String getTokenFromAuthorityCenter(ServerHttpRequest request, String uriFormat) {
 
-        // service id 就是服务名字, 负载均衡
+        // 根据服务的名称（service id 就是服务名字），获取一个服务实例
         ServiceInstance serviceInstance = loadBalancerClient.choose(
                 CommonConstant.AUTHORITY_CENTER_SERVICE_ID
         );
