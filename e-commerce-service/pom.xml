@@ -15,6 +15,7 @@
 
     <modules>
         <module>e-commerce-service-config</module>
+        <module>e-commerce-account-service</module>
     </modules>
 
     <!-- 模块名及描述信息 -->
