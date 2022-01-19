@@ -19,6 +19,7 @@ spring:
   kafka:
     bootstrap-servers: 127.0.0.1:9092
     producer:
+      # 失败的话，尝试发送3次
       retries: 3
     consumer:
       auto-offset-reset: latest

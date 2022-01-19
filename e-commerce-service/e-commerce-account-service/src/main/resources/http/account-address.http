@@ -1,0 +1,45 @@
+### 创建用户地址信息
+POST http://127.0.0.1:9001/asan/ecommerce-account-service/address/create-address
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEwLFwidXNlcm5hbWVcIjpcImFzYW4xMjNAcXEuY29tXCJ9IiwianRpIjoiY2IyOGViODUtZWM2ZS00OWIwLWI4NmUtMDE3OTY2ODEyYjk5IiwiZXhwIjoxNjQyNjA4MDAwfQ.Fn8neNXyYnUsLaeKNBq4YVzAkSmR7zdao5NGz2-g2LTzk40cX5lZh-CFu7BfDzxTZi0JZej6iimWik3J4zp024g61H-v_31SxzK4dhvOxKYH2sD2pQA4IxblQhx8hCGz7oNan4kKoG8MltkqyrYBfo0IbOUQMHw1Uk1eMPa4pmCQwmlB-AAiV_uS23y1kLBPUa19bnEMv2NmlKu946unPG7RosmdUGem7Z_giOrFo7C6lIGjqhghHZYcc1OLP7hqLnl_CFmj8bmWxCLS6sg5Q0dfqHLBYKKT7XcqwwnxFBs8WhWKNOb_OxpTrLEzqS6syfsW0sZpzod1InzJP3LLWg
+
+{
+  "userId": 10,
+  "addressItems": [
+    {
+      "username": "r3",
+      "phone": "16600000001",
+      "province": "广东省",
+      "city": "深圳市",
+      "addressDetail": "福田区"
+    }
+  ]
+}
+
+### 当前登录用户地址信息
+GET http://127.0.0.1:9001/asan/ecommerce-account-service/address/current-address
+Accept: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEwLFwidXNlcm5hbWVcIjpcImFzYW4xMjNAcXEuY29tXCJ9IiwianRpIjoiY2IyOGViODUtZWM2ZS00OWIwLWI4NmUtMDE3OTY2ODEyYjk5IiwiZXhwIjoxNjQyNjA4MDAwfQ.Fn8neNXyYnUsLaeKNBq4YVzAkSmR7zdao5NGz2-g2LTzk40cX5lZh-CFu7BfDzxTZi0JZej6iimWik3J4zp024g61H-v_31SxzK4dhvOxKYH2sD2pQA4IxblQhx8hCGz7oNan4kKoG8MltkqyrYBfo0IbOUQMHw1Uk1eMPa4pmCQwmlB-AAiV_uS23y1kLBPUa19bnEMv2NmlKu946unPG7RosmdUGem7Z_giOrFo7C6lIGjqhghHZYcc1OLP7hqLnl_CFmj8bmWxCLS6sg5Q0dfqHLBYKKT7XcqwwnxFBs8WhWKNOb_OxpTrLEzqS6syfsW0sZpzod1InzJP3LLWg
+
+### 通过 id 获取用户地址信息
+GET http://127.0.0.1:9001/asan/ecommerce-account-service/address/address-info?id=11
+Accept: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEwLFwidXNlcm5hbWVcIjpcImFzYW4xMjNAcXEuY29tXCJ9IiwianRpIjoiY2IyOGViODUtZWM2ZS00OWIwLWI4NmUtMDE3OTY2ODEyYjk5IiwiZXhwIjoxNjQyNjA4MDAwfQ.Fn8neNXyYnUsLaeKNBq4YVzAkSmR7zdao5NGz2-g2LTzk40cX5lZh-CFu7BfDzxTZi0JZej6iimWik3J4zp024g61H-v_31SxzK4dhvOxKYH2sD2pQA4IxblQhx8hCGz7oNan4kKoG8MltkqyrYBfo0IbOUQMHw1Uk1eMPa4pmCQwmlB-AAiV_uS23y1kLBPUa19bnEMv2NmlKu946unPG7RosmdUGem7Z_giOrFo7C6lIGjqhghHZYcc1OLP7hqLnl_CFmj8bmWxCLS6sg5Q0dfqHLBYKKT7XcqwwnxFBs8WhWKNOb_OxpTrLEzqS6syfsW0sZpzod1InzJP3LLWg
+
+### 获取用户地址信息
+POST http://127.0.0.1:9001/asan/ecommerce-account-service/address/address-info-by-table-id
+Content-Type: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEwLFwidXNlcm5hbWVcIjpcImFzYW4xMjNAcXEuY29tXCJ9IiwianRpIjoiY2IyOGViODUtZWM2ZS00OWIwLWI4NmUtMDE3OTY2ODEyYjk5IiwiZXhwIjoxNjQyNjA4MDAwfQ.Fn8neNXyYnUsLaeKNBq4YVzAkSmR7zdao5NGz2-g2LTzk40cX5lZh-CFu7BfDzxTZi0JZej6iimWik3J4zp024g61H-v_31SxzK4dhvOxKYH2sD2pQA4IxblQhx8hCGz7oNan4kKoG8MltkqyrYBfo0IbOUQMHw1Uk1eMPa4pmCQwmlB-AAiV_uS23y1kLBPUa19bnEMv2NmlKu946unPG7RosmdUGem7Z_giOrFo7C6lIGjqhghHZYcc1OLP7hqLnl_CFmj8bmWxCLS6sg5Q0dfqHLBYKKT7XcqwwnxFBs8WhWKNOb_OxpTrLEzqS6syfsW0sZpzod1InzJP3LLWg
+
+{
+  "ids": [
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    }
+  ]
+}
+
+###
