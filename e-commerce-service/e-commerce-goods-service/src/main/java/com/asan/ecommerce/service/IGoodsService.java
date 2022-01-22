@@ -45,7 +45,7 @@ public interface IGoodsService {
      * <h2>扣减商品库存</h2>
      *
      * @param deductGoodsInventories 扣减商品库存对象
-     * @return Boolean
+     * @return 成功返回true，不成功直接抛出异常
      */
     Boolean deductGoodsInventory(List<DeductGoodsInventory> deductGoodsInventories);
 }

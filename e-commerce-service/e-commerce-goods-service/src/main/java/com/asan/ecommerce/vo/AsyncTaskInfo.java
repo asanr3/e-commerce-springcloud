@@ -1,5 +1,6 @@
 package com.asan.ecommerce.vo;
 
+import com.asan.ecommerce.constant.AsyncTaskStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,10 @@ public class AsyncTaskInfo {
      */
     private String taskId;
 
-    /** 异步任务执行状态 */
-    // private AsyncTaskStatusEnum status;
+    /**
+     * 异步任务执行状态
+     */
+    private AsyncTaskStatusEnum status;
 
     /**
      * 异步任务开始时间
