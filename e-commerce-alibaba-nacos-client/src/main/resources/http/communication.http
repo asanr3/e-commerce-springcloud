@@ -43,7 +43,7 @@ POST http://127.0.0.1:8000/ecommerce-nacos-client/communication/token-by-feign
 Content-Type: application/json
 
 {
-  "username": "Qinyi@imooc.com",
+  "username": "asan123@qq.com",
   "password": "25d55ad283aa400af464c76d713c07ad"
 }
 

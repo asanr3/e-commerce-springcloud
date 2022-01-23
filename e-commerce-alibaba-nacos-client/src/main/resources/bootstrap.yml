@@ -37,6 +37,29 @@ spring:
       type: kafka
     # 指定 zipkin 的地址
     base-url: http://localhost:9411/
+
+# Feign 的相关配置
+feign:
+  # feign 开启 gzip 压缩
+  compression:
+    # 请求时进行压缩
+    request:
+      enabled: true
+      # 针对什么类型的数据进行压缩
+      mime-types: text/xml,application/xml,application/json
+      # 大于1M的数据才进行压缩
+      min-request-size: 1024
+    # 响应时进行压缩
+    response:
+      enabled: true
+  # 禁用默认的 http, 启用 okhttp
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  # OpenFeign 集成 Hystrix
+  hystrix:
+    enabled: true
 # 暴露端点
 management:
   endpoints:
