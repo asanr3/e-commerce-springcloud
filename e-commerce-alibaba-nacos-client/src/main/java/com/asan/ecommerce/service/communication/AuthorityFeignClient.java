@@ -1,5 +1,6 @@
 package com.asan.ecommerce.service.communication;
 
+import com.asan.ecommerce.service.communication.hystrix.AuthorityFeignClientFallback;
 import com.asan.ecommerce.vo.JwtToken;
 import com.asan.ecommerce.vo.UsernameAndPassword;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date 2022/1/23
  */
 @FeignClient(
-        contextId = "AuthorityFeignClient", value = "e-commerce-authority-center"
-//        fallback = AuthorityFeignClientFallback.class
+        contextId = "AuthorityFeignClient", value = "e-commerce-authority-center",
+       fallback = AuthorityFeignClientFallback.class
 //         fallbackFactory = AuthorityFeignClientFallbackFactory.class
 )
 public interface AuthorityFeignClient {

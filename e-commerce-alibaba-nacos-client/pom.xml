@@ -71,6 +71,11 @@
             <artifactId>feign-gson</artifactId>
             <version>11.0</version>
         </dependency>
+        <!-- 集成 hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
     </dependencies>
 
     <!--
