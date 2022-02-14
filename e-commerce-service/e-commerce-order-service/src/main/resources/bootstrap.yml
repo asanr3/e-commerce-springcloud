@@ -1,12 +1,28 @@
 server:
-  port: 8001
+  port: 8002
   servlet:
-    context-path: /ecommerce-goods-service
+    context-path: /ecommerce-order-service
 
 spring:
+  main:
+    # 允许同名的bean出现
+    allow-bean-definition-overriding: true
   application:
-    name: e-commerce-goods-service
+    name: e-commerce-order-service
   cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:9092
+          auto-create-topics: true
+      bindings:
+        # 自定义的输出通道
+        logisticsOutput:
+          destination: e-commerce-topic   # kafka topic
+          content-type: text/plain
+#    alibaba:
+#      seata:
+#        tx-service-group: asan-ecommerce # seata 全局事务分组
     nacos:
       discovery:
         enabled: true # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可
@@ -16,9 +32,10 @@ spring:
         metadata:
           management:
             context-path: ${server.servlet.context-path}/actuator
-    alibaba:
-      seata:
-        tx-service-group: imooc-ecommerce # seata 全局事务分组
+    # 开启 ribbon 重试机制, 即获取服务失败是否从另外一个节点重试
+    loadbalancer:
+      retry:
+        enabled: true
   kafka:
     bootstrap-servers: 127.0.0.1:9092
     producer:
@@ -55,14 +72,17 @@ spring:
       connection-timeout: 30000
       max-lifetime: 45000
       auto-commit: true
-      pool-name: AsanCouponHikariCP
-  redis:
-    database: 0
-    host: 127.0.0.1
-    port: 6379
-    # password:
-    # 连接超时时间
-    timeout: 10000
+      pool-name: AsanEcommerceHikariCP
+
+# feign 相关的配置
+feign:
+  hystrix:
+    enabled: true   # Hystrix 默认是关闭的
+  client:
+    config:
+      default:  # 全局的
+        connectTimeout: 2000  # 默认的连接超时时间是 10s
+        readTimeout: 5000
 
 # 暴露端点
 management:
