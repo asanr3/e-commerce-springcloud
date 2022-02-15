@@ -20,9 +20,9 @@ spring:
         logisticsOutput:
           destination: e-commerce-topic   # kafka topic
           content-type: text/plain
-#    alibaba:
-#      seata:
-#        tx-service-group: asan-ecommerce # seata 全局事务分组
+    alibaba:
+      seata:
+        tx-service-group: asan-ecommerce # seata 全局事务分组
     nacos:
       discovery:
         enabled: true # 如果不想使用 Nacos 进行服务注册和发现, 设置为 false 即可

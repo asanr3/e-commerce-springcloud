@@ -18,7 +18,7 @@ spring:
             context-path: ${server.servlet.context-path}/actuator
     alibaba:
       seata:
-        tx-service-group: imooc-ecommerce # seata 全局事务分组
+        tx-service-group: asan-ecommerce # seata 全局事务分组
   kafka:
     bootstrap-servers: 127.0.0.1:9092
     producer:

@@ -1,0 +1,22 @@
+### 创建订单
+POST http://127.0.0.1:9001/asan/ecommerce-order-service/order/create-order
+Content-Type: application/json
+Accept: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEwLFwidXNlcm5hbWVcIjpcImFzYW4xMjNAcXEuY29tXCJ9IiwianRpIjoiNDliZTdkNDMtOGIwZS00M2M2LTk1MTUtNjM3ODY1NmM3NGQ4IiwiZXhwIjoxNjQ0OTQwODAwfQ.gldkWIEJzrW5KBaBra6b28JgO52dN3-5LLO-qZJOQzp56E08qEoRQ7CbqAJkovhhustQ3-J569z4ja_QaFY16SwZkNMc6k6G_c_S0Jdp5jSVuI91qFqS9ACSbDZLYvhD4Kh6Z6QqtBCB16t8ddA5pJ0vMWvu3cU4eVrdecBomq-mOjVmcgE1KsyMP7PT1KgBSz7EuMBzWZ_7AHQtSDr2-5x0YiUITm6wxSqFmSI-uhJolYj_3TczwfYZNWeMtI7r-FJ8z9eM8PguaLBn5v05A0XCiEDbBUK-hzqrgmct9SOR8MPNQOJZuMjsO8lmQKCKCeYBor7Pa_YZDuYmspRzWw
+
+{
+  "userAddress": 11,
+  "orderItems": [
+    {
+      "goodsId": 10,
+      "count": 5
+    }
+  ]
+}
+
+### 查询订单
+GET http://127.0.0.1:9001/asan/ecommerce-order-service/order/order-detail
+Accept: application/json
+e-commerce-user: eyJhbGciOiJSUzI1NiJ9.eyJlLWNvbW1lcmNlLXVzZXIiOiJ7XCJpZFwiOjEwLFwidXNlcm5hbWVcIjpcImFzYW4xMjNAcXEuY29tXCJ9IiwianRpIjoiNDliZTdkNDMtOGIwZS00M2M2LTk1MTUtNjM3ODY1NmM3NGQ4IiwiZXhwIjoxNjQ0OTQwODAwfQ.gldkWIEJzrW5KBaBra6b28JgO52dN3-5LLO-qZJOQzp56E08qEoRQ7CbqAJkovhhustQ3-J569z4ja_QaFY16SwZkNMc6k6G_c_S0Jdp5jSVuI91qFqS9ACSbDZLYvhD4Kh6Z6QqtBCB16t8ddA5pJ0vMWvu3cU4eVrdecBomq-mOjVmcgE1KsyMP7PT1KgBSz7EuMBzWZ_7AHQtSDr2-5x0YiUITm6wxSqFmSI-uhJolYj_3TczwfYZNWeMtI7r-FJ8z9eM8PguaLBn5v05A0XCiEDbBUK-hzqrgmct9SOR8MPNQOJZuMjsO8lmQKCKCeYBor7Pa_YZDuYmspRzWw
+
+###
