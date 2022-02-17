@@ -5,9 +5,6 @@ import com.asan.ecommerce.annotation.IgnoreResponseAdvice;
 import com.asan.ecommerce.service.IJWTService;
 import com.asan.ecommerce.vo.JwtToken;
 import com.asan.ecommerce.vo.UsernameAndPassword;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author mingkai yun
  * @date 2022/1/13
  */
-@Api(value = "AuthorityController", tags = "对外暴露的授权服务接口")
 @Slf4j
 @RestController
 @RequestMapping("/authority")
@@ -34,8 +30,6 @@ public class AuthorityController {
     /**
      * <h2>从授权中心获取 Token (其实就是登录功能), 且返回信息中没有统一响应的包装</h2>
      */
-    @ApiOperation(value = "从授权中心获取 Token", notes = "从授权中心获取 Token (其实就是登录功能), 且返回信息中没有统一响应的包装")
-    @ApiImplicitParams({})
     @IgnoreResponseAdvice
     @PostMapping("/token")
     public JwtToken token(@RequestBody UsernameAndPassword usernameAndPassword)
@@ -52,8 +46,6 @@ public class AuthorityController {
     /**
      * <h2>注册用户并返回当前注册用户的 Token, 即通过授权中心创建用户</h2>
      */
-    @ApiOperation(value = "注册用户并返回当前注册用户的 Token", notes = "注册用户并返回当前注册用户的 Token, 即通过授权中心创建用户")
-    @ApiImplicitParams({})
     @IgnoreResponseAdvice
     @PostMapping("/register")
     public JwtToken register(@RequestBody UsernameAndPassword usernameAndPassword)
