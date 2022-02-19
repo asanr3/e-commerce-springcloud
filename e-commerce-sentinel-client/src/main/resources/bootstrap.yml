@@ -22,19 +22,19 @@ spring:
       transport:
         dashboard: 127.0.0.1:7777
         port: 8719 # 会在应用对应的机器上启动一个 Http Server, 该 Server 会与 Sentinel 控制台做交互
-#      datasource:
-#        # 名称任意, 代表数据源
-#        ds:
-#          nacos:
-#            # NacosDataSourceProperties.java 中定义
-#            server-addr: ${spring.cloud.nacos.discovery.server-addr}
-#            dataId: ${spring.application.name}-sentinel
-#            namespace: ${spring.cloud.nacos.discovery.namespace}
-#            groupId: DEFAULT_GROUP
-#            data-type: json
-#            # 规则类型: com.alibaba.cloud.sentinel.datasource.RuleType
-#            # FlowRule 就是限流规则
-#            rule-type: flow
+      datasource:
+        # 名称任意, 代表数据源
+        ds:
+          nacos:
+            # NacosDataSourceProperties.java 中定义
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            dataId: ${spring.application.name}-sentinel
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            # 规则类型: com.alibaba.cloud.sentinel.datasource.RuleType
+            # FlowRule 就是限流规则
+            rule-type: flow
       # 服务启动直接建立心跳连接
       eager: true
 

@@ -39,9 +39,9 @@ public class NacosClientService {
        // }
 
         // 测试 NacosClientHystrixCommand 熔断
-       throw new RuntimeException("has some error");
-       //  log.info("request nacos client to get service instance info: [{}]", serviceId);
-       //  return discoveryClient.getInstances(serviceId);
+       // throw new RuntimeException("has some error");
+        log.info("request nacos client to get service instance info: [{}]", serviceId);
+        return discoveryClient.getInstances(serviceId);
     }
     /**
      * <h2>提供给编程方式的 Hystrix 请求合并</h2>

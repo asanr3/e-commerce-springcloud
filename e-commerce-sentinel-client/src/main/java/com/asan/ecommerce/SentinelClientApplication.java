@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author mingkai yun
  * @date 2022/2/17
  */
-// @EnableFeignClients
+@EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
 public class SentinelClientApplication {
