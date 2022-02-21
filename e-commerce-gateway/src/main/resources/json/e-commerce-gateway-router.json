@@ -1,0 +1,65 @@
+[
+  {
+    "id": "e-commerce-nacos-client",
+    "predicates": [
+      {
+        "args": {
+          "pattern": "/asan/ecommerce-nacos-client/**"
+        },
+        "name": "Path"
+      }
+    ],
+    "uri": "lb://e-commerce-nacos-client",
+    "filters": [
+      {
+        "name": "HeaderToken"
+      },
+      {
+        "name": "StripPrefix",
+        "args": {
+          "parts": "1"
+        }
+      }
+    ]
+  },
+  {
+  "id": "e-commerce-account-service",
+  "predicates": [
+    {
+      "args": {
+        "pattern": "/asan/ecommerce-account-service/**"
+      },
+      "name": "Path"
+    }
+  ],
+  "uri": "lb://e-commerce-account-service",
+  "filters": [
+    {
+      "name": "StripPrefix",
+      "args": {
+        "parts": "1"
+      }
+    }
+  ]
+},
+  {
+    "id": "e-commerce-goods-service",
+    "predicates": [
+      {
+        "args": {
+          "pattern": "/asan/ecommerce-goods-service/**"
+        },
+        "name": "Path"
+      }
+    ],
+    "uri": "lb://e-commerce-order-service",
+    "filters": [
+      {
+        "name": "StripPrefix",
+        "args": {
+          "parts": "1"
+        }
+      }
+    ]
+  }
+]

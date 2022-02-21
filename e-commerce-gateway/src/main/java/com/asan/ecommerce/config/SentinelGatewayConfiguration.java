@@ -189,7 +189,7 @@ public class SentinelGatewayConfiguration {
         ApiDefinition api1 = new ApiDefinition("nacos-client-api-1")
                 .setPredicateItems(new HashSet<ApiPredicateItem>() {{
                     add(new ApiPathPredicateItem()
-                            // 精确匹配 /imooc/ecommerce-nacos-client/nacos-client/service-instance
+                            // 精确匹配 /asan/ecommerce-nacos-client/nacos-client/service-instance
                             .setPattern("/asan/ecommerce-nacos-client" +
                                     "/nacos-client/service-instance"));
                 }});

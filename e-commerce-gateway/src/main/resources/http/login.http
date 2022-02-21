@@ -12,6 +12,6 @@ POST 127.0.0.1:9001/asan/e-commerce/register
 Content-Type: application/json
 
 {
-  "username": "asan1231@imooc.com",
+  "username": "asan1231@asan.com",
   "password": "25d55ad283aa400af464c76d713c07ad"
 }
