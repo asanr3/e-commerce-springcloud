@@ -23,4 +23,5 @@
 │  │  ├─e-commerce-service-config --功能微服务公共配置模块
 │  │  └─e-commerce-service-sdk --功能微服务的SDK模块（微服务之间传递的实体对象）
 │  └─e-commerce-stream-client --SpringCloud Stream 消息驱动微服务（主要是将物流消息推送给物流服务）
+
 ```
